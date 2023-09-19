@@ -16,9 +16,9 @@ def carros():
             for linea in archivo:
                 cadena = linea
                 cadena = cadena.split(",")
-                usuarios.append({ "Marca" : cadena[0] })
-                usuarios.append({ "Color" : cadena[1] })
-                usuarios.append({ "Estado" : cadena[2] })
+                ultimo_elemento = cadena[-1]
+                cadena[-1] = ultimo_elemento[:-1]
+                usuarios.append({ "Marca" : cadena[0],"Color" : cadena[1],"Estado" : cadena[2] })
 
         return jsonify(usuarios)
      
