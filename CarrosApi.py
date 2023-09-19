@@ -5,15 +5,16 @@ app = Flask(__name__)
 @app.route('/', methods = ["GET","POST"])
 
 def carros():
+     
+     nombre_archivo = "log.txt"
      name = request.headers.get('User-name')
      method = request.method
-     nombre_archivo = "log.txt"
 
      if method == "GET":
         usuarios = []
         with open(nombre_archivo, 'r') as archivo:
             for linea in archivo:
-                usuarios.append({"nombre" : linea})
+                usuarios.append({ "nombre" : linea })
 
         return jsonify(usuarios)
      
