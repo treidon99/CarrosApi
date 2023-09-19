@@ -1,2 +1,2 @@
 Mazda,Negro,Nuevo
-d,Nd,Nuo
+Renault,Rojo,Usado

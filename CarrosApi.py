@@ -14,7 +14,11 @@ def carros():
         usuarios = []
         with open(nombre_archivo, 'r') as archivo:
             for linea in archivo:
-                usuarios.append({ "Marca" : linea })
+                cadena = linea
+                cadena = cadena.split(",")
+                usuarios.append({ "Marca" : cadena[0] })
+                usuarios.append({ "Color" : cadena[1] })
+                usuarios.append({ "Estado" : cadena[2] })
 
         return jsonify(usuarios)
      
