@@ -14,7 +14,7 @@ def carros():
         usuarios = []
         with open(nombre_archivo, 'r') as archivo:
             for linea in archivo:
-                usuarios.append({ "nombre" : linea })
+                usuarios.append({ "Marca" : linea })
 
         return jsonify(usuarios)
      
@@ -23,9 +23,9 @@ def carros():
         data = request.get_json()
 
         with open(nombre_archivo, 'a+') as archivo:
-            archivo.write(data.get("nombre")+'\n')
+            archivo.write(data.get("Marca")+','+data.get("Color")+','+data.get("Estado")+'\n')
 
-        return f'El usiario fue agregado'
+        return f'El carro y sus caracteristicas fueron agregadas'
 
 if __name__ == '__main__':
     app.run(debug=True)
