@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -7,15 +7,19 @@ app = Flask(__name__)
 def carros():
      name = request.headers.get('User-name')
      method = request.method
+     nombre_archivo = "log.txt"
 
      if method == "GET":
+        usuarios = []
+        with open(nombre_archivo, 'r') as archivo:
+            for linea in archivo:
+                usuarios.append({"nombre" : linea})
 
-        return f'Tu nombre es {name}'
+        return 
      
      elif method == "POST":
          
         data = request.get_json()
-        nombre_archivo = "log.txt"
 
         with open(nombre_archivo, 'a+') as archivo:
             archivo.write(data.get("nombre")+'\n')
