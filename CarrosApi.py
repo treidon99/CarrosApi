@@ -11,9 +11,10 @@ def carros():
      if method == "GET":
         return f'Tu nombre es {name}'
      elif method == "POST":
-         data = request.get()
-         print("Hemos reciido u usario")
+         data = request.get_json()
+         print("Hemos recibido su usario")
          print("Su nombre es ", data.get("nombre"))
+         return ''
 
 if __name__ == '__main__':
     app.run(debug=True)
