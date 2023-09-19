@@ -15,7 +15,7 @@ def carros():
             for linea in archivo:
                 usuarios.append({"nombre" : linea})
 
-        return 
+        return jsonify(usuarios)
      
      elif method == "POST":
          
