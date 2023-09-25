@@ -18,7 +18,7 @@ def carros(): #Funcion a manejar
                 cadena = cadena.split(",")
                 ultimo_elemento = cadena[-1]
                 cadena[-1] = ultimo_elemento[:-1]
-                # Se agregan los atributos de la cadena al arreglo de atributos
+                # Se agregan los atributos de la cadena a la lista de atributos
                 Atributos.append({ "Marca" : cadena[0],"Color" : cadena[1],"Estado" : cadena[2] })
 
         return jsonify(Atributos) #Retrono del metodo GET, para mostrar los atributos en Json

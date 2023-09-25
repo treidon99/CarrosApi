@@ -1,3 +1,2 @@
-Mazda,Negro,Nuevo
+Lambo,Negro,Nuevo
 Renault,Rojo,Usado
-Chevrolet,Amarillo,Nuevo
